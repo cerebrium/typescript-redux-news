@@ -1,5 +1,15 @@
 import React from 'react'
-import SingleArticles from '../types/interfaces'
+
+// declare interface
+interface SingleArticles {
+    name: string,
+    id: string
+    author: string
+    title: string
+    summary: string
+    text: string
+    publishedDate: string
+}
 
 const SingleArticle = (props: SingleArticles) => {
     return (
