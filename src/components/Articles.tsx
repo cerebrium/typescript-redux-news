@@ -27,11 +27,20 @@ const Articles = () => {
                 ))
             })
         })
+        // for (let i = 0; i < 10; i++) {
+        //     dispatch(addArticle(
+        //         'newsBTC',
+        //         'Nick Chong',
+        //         'Canadian Central Bank Releases Extensive Report on Viability of CBDCs',
+        //         'Central bank digital currencies, often known as CBDCs, are seemingly imminent: over recent months, central banks around the world have revealed that they are working on their own digital currency projects. This trend is seemingly a response to the persistence…',
+        //         'Central bank digital currencies, often known as CBDCs, are seemingly imminent: over recent months, central banks around the world have revealed that they are working on their own digital currency pro…Central bank digital currencies, often known as CBDCs, are seemingly imminent: over recent months, central banks around the world have revealed that they are working on their own digital currency pro…Central bank digital currencies, often known as CBDCs, are seemingly imminent: over recent months, central banks around the world have revealed that they are working on their own digital currency pro…Central bank digital currencies, often known as CBDCs, are seemingly imminent: over recent months, central banks around the world have revealed that they are working on their own digital currency pro…Central bank digital currencies, often known as CBDCs, are seemingly imminent: over recent months, central banks around the world have revealed that they are working on their own digital currency pro…',
+        //         '2020-10-06T03:02:08Z'
+        //     ))
+        // }
     }, [dispatch])
 
     // when articles arrive map them to render
     useEffect( () => {
-        // console.log(articles.articles)
         // define array to be set into render array
         let localRenderArray: Array<JSX.Element> = []
 

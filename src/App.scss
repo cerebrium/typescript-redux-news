@@ -60,6 +60,7 @@ $background-container-color: #ececec;
 $title-font-color: #423c44;
 $font-main-color: #444343;
 $top-nav-background: rgb(202, 202, 202);
+$box-hover:  rgb(196, 196, 196);
 
 // ***************** end of fonts and imports ****************************//
 // ***************** declare global styles *******************************//
@@ -100,6 +101,34 @@ html {
     }
 }
 
+$box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.404);
+
+// ******************* global classes ********************** //
+// center content using flex - vertical and horizontal -
+%center-things-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// place buttons on bottom right of screen
+%button-position {
+    @extend %center-things-flex;
+    box-shadow: $box-shadow;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 100px;
+    height: 40px;
+    background-color: $title-font-color;
+    text-decoration: none;
+    color: $top-nav-background;
+    border-radius: .4rem;
+}
+%button-position:hover {
+    background-color: $font-main-color;
+}
+
 // overall container for each page
 %container-style {
     width: 100vw;
@@ -135,7 +164,8 @@ html {
 // each individual article
 %single-article-container {
     background-color: $top-nav-background;
-    // color: $background-container-color;
+    box-shadow: $box-shadow;
+    text-decoration: none;
     margin: 20px 0 20px 0;
     padding: 20px;
     border-radius: 1rem;
@@ -143,12 +173,20 @@ html {
         text-align: center;
         font-weight: 600;
         margin-bottom: 5px;
+        color: $font-main-color;
+    }
+    .singleArticleSummary {
+        color: $font-main-color;
     }
     .singleArticleAuthor {
         margin-top: 10px;
         font-weight: 400;
+        color: $font-main-color;
     }
 }
+%single-article-container:hover {
+    background-color: $box-hover;
+}   
 
 
 // ***************** home stlye ***************************************//
@@ -157,7 +195,36 @@ html {
     .articleDisplayContainer {
         @extend %articles-array-container;
     }
-    .singleArticleContainer {
-        @extend %single-article-container;
+    .linkStyle {
+        text-decoration: none;
+        .singleArticleContainer {
+            @extend %single-article-container;
+        }
     }
 }
+
+// ********************** Full Article ********************************//
+.fullArticleContainer {
+    @extend %container-style;
+    .fullArticleTitle {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .fullArticleAuthorBox {
+        @extend %center-things-flex;
+        margin: 20px;
+        .fullArticleName {
+            margin-right: 40px;
+        }
+    }
+    .fullArticleText {
+        max-width: 90vw;
+        text-align: justify;
+    }
+    .linkContainer {
+        @extend %button-position;
+    }
+}
+
+// ********************** Nav *******************************************//
+
